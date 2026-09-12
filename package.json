@@ -1,0 +1,29 @@
+{
+  "name": "group-chat-web-application",
+  "version": "2.0.0",
+  "description": "Distributed Secure Group Chat with Dynamic Load Balancing, Persistence, and Telemetry",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "start:lb": "node lb/server.js",
+    "start:sys1": "cross-env LB_PORT=3261 node lb/server.js",
+    "start:sys2": "cross-env INSTANCE_NAME=SYS2 PORT=3262 node server/index.js",
+    "start:sys3": "cross-env INSTANCE_NAME=SYS3 PORT=3263 node server/index.js",
+    "start:sys4": "cross-env INSTANCE_NAME=SYS4 PORT=3264 node server/index.js",
+    "test": "cross-env ALLOW_MOCK_DB=true node tests/run_all_tests.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "http-proxy": "^1.18.1",
+    "pg": "^8.13.3",
+    "socket.io": "^4.8.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9"
+  }
+}

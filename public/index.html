@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Group Chat</h1>
+        <div id="homeScreen" class="card">
+            <h2>Join Room</h2>
+            <input type="text" id="usernameInput" placeholder="Enter username" maxlength="20">
+            <button id="joinButton">Join Room</button>
+        </div>
+
+        <div id="chatScreen" class="chat-card hidden">
+            <div class="chat-header">
+                <div>
+                    <p id="displayMyName">You: -</p>
+                    <div class="participants-section">
+                        <div id="participantsToggle" class="participants-toggle">
+                            Participants (<span id="participantCount">0/4</span>)
+                        </div>
+                        <div id="participantsList" class="participants-list hidden"></div>
+                    </div>
+                </div>
+                <button id="leaveButton" class="leave-button">Leave</button>
+            </div>
+            <div id="messages" class="messages"></div>
+            <div id="typingIndicator" class="typing-indicator"></div>
+            <div class="message-input-area">
+                <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
