@@ -1,0 +1,19 @@
+{
+  "name": "group-chat-app",
+  "version": "2.0.0",
+  "description": "Distributed secure group chat with Socket.IO, REST API, and PostgreSQL",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pg": "^8.23.0",
+    "socket.io": "^4.8.3",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
